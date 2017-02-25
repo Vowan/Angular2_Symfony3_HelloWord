@@ -1,19 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block javascripts %}
-    <script src="../node_modules/core-js/client/shim.min.js"></script>
-    <script src="../node_modules/zone.js/dist/zone.js"></script>
-    <script src="../node_modules/systemjs/dist/system.src.js"></script>
-
-    <script src="../src/systemjs.config.js"></script>
-    <script>
-        console.log(System);
-
-        System.import('../src/main.js').catch(function (err) {
-            console.error(err);
-        });
-    </script>
-
+     <script src="{{ asset('build/polyfills.js') }}"></script>
+      <script src="{{ asset('build/vendor.js') }}"></script>
+    <script src="{{ asset('build/app.js') }}"></script>
+   
 {% endblock %}
 
 {% block body %}
